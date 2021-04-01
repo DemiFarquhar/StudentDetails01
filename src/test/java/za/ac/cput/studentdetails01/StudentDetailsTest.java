@@ -16,11 +16,15 @@ import org.junit.jupiter.api.Timeout;
 /**
  *
  * @author Breyton Ernstzen
+ * 
+ * Testing methods for a small StudentDetails program
+ * Testing done by Zubair Esau - 217100554
  */
+ 
 public class StudentDetailsTest {
     
     
-     
+     @Disabled("Disable all test as given by intruction")
 
      @Test
      @Timeout (5)
@@ -31,24 +35,23 @@ public class StudentDetailsTest {
         StudentDetails calcAverage = new  StudentDetails();
         
         String expectedname = student.getStudentName();
-        String actualname = "John";
+        String actualname = "John";                         //Tesing equality for student name
         assertEquals(expectedname,actualname);
         
         String expectedMajor = majorSubject.getMajorsubject();
-        String actualMajor = "Maths";
+        String actualMajor = "Maths";                      //Testing equaliy for major subject
         assertEquals(expectedMajor,actualMajor);
         
         String expectedMinor = minorSubject.getMinorsubject();
-        String actualMinor = "Linux";
+        String actualMinor = "Linux";                      //Testing equality for minor subject
         assertEquals(expectedMinor,actualMinor);
     }
         @Test
-                public void testAverageEquility(){
+         public void testAverageEquility(){
          StudentDetails calcAverage = new  StudentDetails();     
                     
-                    
         double expectedAverage = calcAverage.getAverageamount();
-        double actualAverage = 60;
+        double actualAverage = 60;                                  //Testing equality of average without throwing a exception
         assertEquals(expectedAverage,actualAverage);
     }
        
@@ -64,15 +67,15 @@ public class StudentDetailsTest {
        StudentDetails  calcAverage = new StudentDetails (); StudentDetails calc2Average = calcAverage;
         
         assertSame("John",student.getStudentName());
-        assertNotSame("Jade",student.getStudentName());
+        assertNotSame("Jade",student.getStudentName());       //Testing name identity
         
-        assertSame("Maths",majorSubject.getMajorsubject());
+        assertSame("Maths",majorSubject.getMajorsubject());   //Testing major subject identity
         assertNotSame("Projects",student.getStudentName());
         
-        assertSame("Linux",minorSubject.getMinorsubject());
+        assertSame("Linux",minorSubject.getMinorsubject());   //Testing minor subject identity
        
         
-        assertSame(calcAverage,calc2Average);
+        assertSame(calcAverage,calc2Average);                //Testing average identity
         assertNotSame(student,majorSubject);
         
     }
@@ -86,7 +89,7 @@ public class StudentDetailsTest {
         String expectedMajor = majorSubject.getMajorsubject();
         String actualMajor = "Maths";
         assertEquals(expectedMajor,actualMajor);
-        
+                                                                  //Testing for failure of 2 methods
         String expectedMinor = minorSubject.getMinorsubject();
         String actualMinor = "Linux";
         assertEquals(expectedMinor,actualMinor);
@@ -96,7 +99,7 @@ public class StudentDetailsTest {
     @Test
      @Timeout (5)
     public void testTimeout() throws InterruptedException{
-        Thread.sleep(4000);
+        Thread.sleep(4000);                                   //Timeout testing
         System.out.println("Test passed with good time");
     }
 
@@ -109,8 +112,7 @@ public class StudentDetailsTest {
     
     
     
-    public StudentDetailsTest() {
-    }
+    
     
 
    
