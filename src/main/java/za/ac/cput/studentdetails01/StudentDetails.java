@@ -7,7 +7,7 @@ package za.ac.cput.studentdetails01;
 
 /**
  *
- * @author Breyton Ernstzen - 217203027 (Group Lead)
+ * @author Demi Farquhar 220322104
  */
 public class StudentDetails {
 private String campus;

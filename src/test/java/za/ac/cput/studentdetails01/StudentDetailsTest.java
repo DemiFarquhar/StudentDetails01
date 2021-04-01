@@ -15,10 +15,9 @@ import org.junit.jupiter.api.Timeout;
 
 /**
  *
- * @author Breyton Ernstzen
+ * @author Demi Farquhar 220322104
  * 
- * Testing methods for a small StudentDetails program
- * Testing done by Zubair Esau - 217100554
+ * 
  */
  
 public class StudentDetailsTest {
@@ -54,7 +53,7 @@ assertEquals(expectedStudAdress,actualStudAdress);
 @Test
 public void testGetCampus() throws InterruptedException {
 System.out.println("getCampus");
-Report instance = new Report();
+StudentDetails instance = new StudentDetails();
 String expResult = "";
 String result = instance.getCampus();
 assertEquals(expResult, result);
@@ -83,4 +82,3 @@ public void timeOut() throws InterruptedException{
 
    
     
-}
