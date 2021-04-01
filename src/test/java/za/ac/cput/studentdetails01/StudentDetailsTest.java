@@ -1,12 +1,15 @@
 
 package za.ac.cput.studentdetails01;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import static org.junit.Assert.*;
+
+
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Timeout;
 
@@ -16,7 +19,7 @@ import org.junit.jupiter.api.Timeout;
  */
 public class StudentDetailsTest {
     
-    @Disabled("Disable all test as given by intruction")
+    
      
 
      @Test
@@ -38,11 +41,18 @@ public class StudentDetailsTest {
         String expectedMinor = minorSubject.getMinorsubject();
         String actualMinor = "Linux";
         assertEquals(expectedMinor,actualMinor);
-        
+    }
+        @Test
+                public void testAverageEquility(){
+         StudentDetails calcAverage = new  StudentDetails();     
+                    
+                    
         double expectedAverage = calcAverage.getAverageamount();
-        String actualAverage = "60";
+        double actualAverage = 60;
         assertEquals(expectedAverage,actualAverage);
-         }
+    }
+       
+         
     
     
      @Test
@@ -74,11 +84,11 @@ public class StudentDetailsTest {
           StudentDetails minorSubject = new  StudentDetails();
          
         String expectedMajor = majorSubject.getMajorsubject();
-        String actualMajor = "Afrikaans";
+        String actualMajor = "Maths";
         assertEquals(expectedMajor,actualMajor);
         
         String expectedMinor = minorSubject.getMinorsubject();
-        String actualMinor = "Projects";
+        String actualMinor = "Linux";
         assertEquals(expectedMinor,actualMinor);
         
     }
@@ -102,26 +112,7 @@ public class StudentDetailsTest {
     public StudentDetailsTest() {
     }
     
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
 
-    @Test
-    public void testSomeMethod() {
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+   
     
 }
