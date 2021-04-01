@@ -12,6 +12,7 @@ package za.ac.cput.studentdetails01;
 public class StudentDetails {
         private String StudentName,Majorsubject,Minorsubject;
     private double Averageamount;
+    double getAverageamount;
 
     public String getStudentName() {
         return "John";
