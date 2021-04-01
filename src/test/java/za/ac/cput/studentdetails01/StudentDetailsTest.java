@@ -22,86 +22,52 @@ import org.junit.jupiter.api.Timeout;
  */
  
 public class StudentDetailsTest {
+private StudentDetails campus;
+private StudentDetails studAdress;
+ 
+public StudentDetailsTest() {
+campus=new StudentDetails();
+studAdress=new StudentDetails();
     
-    
-     @Disabled("Disable all test as given by intruction")
+    }
+@Test 
+public  void testIdentity() throws InterruptedException{
+assertSame("District Six Campus",campus.getCampus());
+assertNotSame("Mowbray",campus.getCampus());
+assertSame("6 Carter Hout Bay",studAdress.getstudAdress());
+assertNotSame("61 Carter Hout Bay",studAdress.getstudAdress());
 
-     @Test
-     @Timeout (5)
-    public void testEquility() throws InterruptedException{
-        StudentDetails student = new  StudentDetails();
-        StudentDetails majorSubject = new  StudentDetails();
-        StudentDetails minorSubject = new  StudentDetails();
-        StudentDetails calcAverage = new  StudentDetails();
-        
-        String expectedname = student.getStudentName();
-        String actualname = "John";                         //Tesing equality for student name
-        assertEquals(expectedname,actualname);
-        
-        String expectedMajor = majorSubject.getMajorsubject();
-        String actualMajor = "Maths";                      //Testing equaliy for major subject
-        assertEquals(expectedMajor,actualMajor);
-        
-        String expectedMinor = minorSubject.getMinorsubject();
-        String actualMinor = "Linux";                      //Testing equality for minor subject
-        assertEquals(expectedMinor,actualMinor);
-    }
-        @Test
-         public void testAverageEquility(){
-         StudentDetails calcAverage = new  StudentDetails();     
-                    
-        double expectedAverage = calcAverage.getAverageamount();
-        double actualAverage = 60;                                  //Testing equality of average without throwing a exception
-        assertEquals(expectedAverage,actualAverage);
-    }
-       
-         
-    
-    
-     @Test
-     @Timeout (5)
-    public void testIdentity () throws InterruptedException{
-       StudentDetails  student = new StudentDetails ();
-       StudentDetails  majorSubject = new StudentDetails ();
-       StudentDetails  minorSubject = new StudentDetails ();
-       StudentDetails  calcAverage = new StudentDetails (); StudentDetails calc2Average = calcAverage;
-        
-        assertSame("John",student.getStudentName());
-        assertNotSame("Jade",student.getStudentName());       //Testing name identity
-        
-        assertSame("Maths",majorSubject.getMajorsubject());   //Testing major subject identity
-        assertNotSame("Projects",student.getStudentName());
-        
-        assertSame("Linux",minorSubject.getMinorsubject());   //Testing minor subject identity
-       
-        
-        assertSame(calcAverage,calc2Average);                //Testing average identity
-        assertNotSame(student,majorSubject);
-        
-    }
-    
-     @Test
-     @Timeout (5)
-    public void testFailure () throws InterruptedException{
-          StudentDetails majorSubject = new  StudentDetails();
-          StudentDetails minorSubject = new  StudentDetails();
-         
-        String expectedMajor = majorSubject.getMajorsubject();
-        String actualMajor = "Afrikaans";
-        assertEquals(expectedMajor,actualMajor);
-                                                                  //Testing for failure of 2 methods
-        String expectedMinor = minorSubject.getMinorsubject();
-        String actualMinor = "Linux";
-        assertEquals(expectedMinor,actualMinor);
-        
-    }
-    
-    @Test
-     @Timeout (5)
-    public void testTimeout() throws InterruptedException{
-        Thread.sleep(4000);                                   //Timeout testing
-        System.out.println("Test passed with good time");
-    }
+ }
+ @Test
+public  void testEquality() throws InterruptedException {
+ assertEquals("6 Carter Hout Bay",studAdress.getstudAdress());   
+ assertEquals("District Six Campus",campus.getCampus());
+
+}
+@Test 
+@Disabled("Disable test")
+public void testDisable() throws InterruptedException{
+String expectedStudAdress=studAdress.getstudAdress();
+String actualStudAdress="6 Carter Hout Bay";
+assertEquals(expectedStudAdress,actualStudAdress);    
+}
+@Test
+public void testGetCampus() throws InterruptedException {
+System.out.println("getCampus");
+Report instance = new Report();
+String expResult = "";
+String result = instance.getCampus();
+assertEquals(expResult, result);
+fail("The test case is a prototype.");
+ }
+
+@Test
+@Timeout(2)
+public void timeOut() throws InterruptedException{
+  Thread.sleep(2);//in miliseconds
+  System.out.println("Test passed in the corret amount of time ");
+}
+}
 
     
     
