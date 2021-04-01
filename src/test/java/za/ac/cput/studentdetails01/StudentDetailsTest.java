@@ -87,7 +87,7 @@ public class StudentDetailsTest {
           StudentDetails minorSubject = new  StudentDetails();
          
         String expectedMajor = majorSubject.getMajorsubject();
-        String actualMajor = "Maths";
+        String actualMajor = "Afrikaans";
         assertEquals(expectedMajor,actualMajor);
                                                                   //Testing for failure of 2 methods
         String expectedMinor = minorSubject.getMinorsubject();
